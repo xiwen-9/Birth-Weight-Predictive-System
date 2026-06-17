@@ -228,49 +228,7 @@ for section_name, section_features in FEATURES.items():
 if st.button("Begin To Predict"):
 
     input_df = pd.DataFrame([input_data])
-    columns_to_keep = [
-    "del_mother_age",
-    "del_mother_anemia_g",
-    "del_mother_dia",
-    "del_mother_gravidity_g",
-    "del_mother_hpd_g1",
-    "del_mother_parity_g",
-    "file_mother_height",
-    "father_height",
-    "father_weight",
-    "file_mother_conception",
-    "file_mother_edu_g",
-    "file_mother_prepreg_weight",
-    "precheck_mother_fh_36",
-    "precheck_mother_fh_38",
-    "precheck_mother_weight_change_36",
-    "precheck_mother_weight_change_39",
-    "precheck_mother_weight_36",
-    "precheck_mother_weight_38",
-    "uls_afi_36",
-    "uls_afi_39",
-    "uls_fetal_ac_36",
-    "uls_fetal_ac_37",
-    "uls_fetal_ac_38",
-    "uls_fetal_ac_39",
-    "uls_fetal_bpd_36",
-    "uls_fetal_bpd_38",
-    "uls_fetal_fl_36",
-    "uls_fetal_fl_37",
-    "uls_fetal_fl_38",
-    "uls_fetal_headcir_36",
-    "uls_fetal_headcir_37",
-    "uls_fetal_headcir_38",
-    "uls_fetal_headcir_39",
-    "uls_mvp_37",
-    "uls_mvp_38",
-    "uls_mvp_39",
-    "uls_placental_thickness_36",
-    "uls_placental_thickness_38",
-    "uls_placental_thickness_39"
-]
 
-    input_df = input_df[columns_to_keep]
 
     raw_pred = xgb_model.predict(
         input_df
