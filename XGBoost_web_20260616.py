@@ -228,7 +228,7 @@ for section_name, section_features in FEATURES.items():
 if st.button("Begin To Predict"):
 
     input_df = pd.DataFrame([input_data])
-    input_df = input_df.reindex(columns=xgb_model.get_booster().feature_names)
+    input_df = input_df.reindex(columns=xgb_model.get_booster().feature_names)#确保预测时变量顺序与训练的模型一致
 
     raw_pred = xgb_model.predict(
         input_df
